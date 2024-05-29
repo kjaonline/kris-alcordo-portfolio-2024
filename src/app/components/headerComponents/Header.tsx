@@ -1,3 +1,5 @@
+import Navigation from "./Navigation"
+
 const Header : React.FC = () => {
 return(
 	<div>
@@ -11,6 +13,7 @@ return(
 				Full Stack Growth Engineer
 			</span>
 		</h1>
+		<Navigation />
 	</div>
 )
 
