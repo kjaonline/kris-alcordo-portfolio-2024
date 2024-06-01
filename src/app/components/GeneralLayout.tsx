@@ -8,7 +8,7 @@ type GeneralLayoutProps = {
 
 const GeneralLayout : React.FC<GeneralLayoutProps>= ({ children }) => {
 	return (
-		<div className="p-1">
+		<div className="p-1 max-w-6xl mx-auto">
 			<Header />
 			<section>
 				{children}

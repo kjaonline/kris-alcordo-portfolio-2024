@@ -17,10 +17,9 @@ const Navigation :React.FC = () => {
 			link: "/contact"
 		}
 	]
-
 	return (
 		<div>
-			<ul className="flex justify-between">
+			<ul className="flex justify-center gap-3 items-center">
 				{navItems.map((item, index) => 
 					<li key={index}>
 						<a href={item.link}>{item.name}</a>
