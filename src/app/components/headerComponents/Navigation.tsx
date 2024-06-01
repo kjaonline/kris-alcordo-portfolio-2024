@@ -19,10 +19,17 @@ const Navigation :React.FC = () => {
 	]
 	return (
 		<div>
-			<ul className="flex justify-center gap-3 items-center">
+
+			<ul className="flex gap-3 items-center py-3">
 				{navItems.map((item, index) => 
-					<li key={index}>
-						<a href={item.link}>{item.name}</a>
+					<li className=""
+						key={index}>
+						<a
+							className="p-2 rounded bg-blue-300 text-blue-900
+									hover:text-blue-100 hover:bg-blue-500
+									transition"
+							href={item.link}>{item.name}
+						</a>
 					</li>
 				)}
 			</ul>
