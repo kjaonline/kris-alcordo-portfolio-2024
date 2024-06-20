@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import GrowthEngineer from "./components/home/GrowthEngineerSection";
 import GrowthEngineerPopup from "./components/home/GrowthEngineerPopup";
+import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
     const [ showWhatGrowthEngineer, setShowWhatGrowthEngineer ] = useState(false);
@@ -21,7 +22,9 @@ export default function Home() {
                     <GrowthEngineer setState={setShowWhatGrowthEngineer} /> I specialize in activities that grow your business through
                     <span className="font-bold"> experimentation, scrappy development, and data-driven decisions.</span>
                 </h1>
-                {showWhatGrowthEngineer && <GrowthEngineerPopup setState={setShowWhatGrowthEngineer} />}
+                <AnimatePresence>
+                    {showWhatGrowthEngineer && <GrowthEngineerPopup setState={setShowWhatGrowthEngineer} />}
+                </AnimatePresence>
             </div>
         </main>
     );

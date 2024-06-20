@@ -15,7 +15,7 @@ const GrowthEngineer :React.FC<GrowthEngineerProps> = ({setState}) => {
                 >
                     an arrow will eventually be here lol
                 </div>
-                fullstack growth engineer
+                Senior Growth Engineer
             </span>. 
         </span>
     )
