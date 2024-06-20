@@ -1,32 +1,35 @@
+import { usePathname } from "next/navigation"
+
+const navItems = [
+	{
+		name: "Home",
+		link: "/"
+	},
+	{
+		name: "About",
+		link: "/about"
+	},
+	{
+		name: "Projects",
+		link: "/projects"
+	},
+	{
+		name: "Contact",
+		link: "/contact"
+	}
+]
+
 const Navigation :React.FC = () => {
-	const navItems = [
-		{
-			name: "Home",
-			link: "/"
-		},
-		{
-			name: "About",
-			link: "/about"
-		},
-		{
-			name: "Projects",
-			link: "/projects"
-		},
-		{
-			name: "Contact",
-			link: "/contact"
-		}
-	]
+	const path = usePathname()
 	return (
 		<div>
-
 			<ul className="flex gap-3 items-center p-2">
 				{navItems.map((item, index) => 
-					<li className=""
-						key={index}>
-						<a
-							className="p-2 transition-all rounded hover:bg-blue-100"
-							href={item.link}>{item.name}
+					<li key={index} >
+						<a href={item.link}
+							className={`p-2 rounded hover:bg-blue-100 transition-all
+										${item.link === path && "bg-blue-100"}`}>
+							{item.name}
 						</a>
 					</li>
 				)}
