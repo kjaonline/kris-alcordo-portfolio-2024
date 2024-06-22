@@ -11,9 +11,9 @@ const GrowthEngineer :React.FC<GrowthEngineerProps> = ({setState}) => {
             I am a <span className="font-bold relative cursor-pointer border-b-4 transition-all
                             hover:text-neutral-700 hover:border-b-4 hover:border-neutral-700">
                 <div
-                    className="absolute bottom-full left-1/2 animate-bounce leading-tight text-sm"
+                    className="absolute bottom-full left-1/2 animate-bounce leading-tight"
                 >
-                    an arrow will eventually be here lol
+                    👇
                 </div>
                 Senior Growth Engineer
             </span>. 
