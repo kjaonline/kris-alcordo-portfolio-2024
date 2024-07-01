@@ -27,8 +27,8 @@ const Navigation :React.FC = () => {
 				{navItems.map((item, index) => 
 					<li key={index} >
 						<a href={item.link}
-							className={`p-2 rounded hover:bg-slate-100 transition-all text-neutral-100 hover:text-black
-										${item.link === path && "bg-slate-100 text-black"}`}>
+							className={`p-2 rounded hover:bg-slate-100 transition-all  hover:text-black
+										${item.link === path ? "bg-slate-100 text-black" : "text-neutral-100"}`}>
 							{item.name}
 						</a>
 					</li>

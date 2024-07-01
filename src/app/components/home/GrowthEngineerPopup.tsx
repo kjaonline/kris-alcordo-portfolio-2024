@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { transform } from "next/dist/build/swc";
+import {useEffect} from "react";
 
 type GrowthEngineerPopUpProps  = {
     setState: React.Dispatch<React.SetStateAction<boolean>>
@@ -48,7 +49,7 @@ const GrowthEngineerPopup :React.FC<GrowthEngineerPopUpProps> = ({setState}) => 
 			</div>
 			
 			<button onClick={() =>setState(false)}
-				className="block w-full bg-blue-500 text-white p-2 rounded mt-4 hover:bg-blue-600 transition-all"
+				className="block w-full bg-black  text-white p-2 rounded mt-4 hover:bg-neutral-800 transition-all"
 			>
 				👍 Cool!
 			</button>

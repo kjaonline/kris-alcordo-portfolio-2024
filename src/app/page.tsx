@@ -4,16 +4,13 @@ import React, { useState } from "react";
 import GrowthEngineer from "./components/home/GrowthEngineerSection";
 import GrowthEngineerPopup from "./components/home/GrowthEngineerPopup";
 import { AnimatePresence } from "framer-motion";
+import FacebookIcon from "@/app/components/socialIcons/Facebook";
+import Instagram from "@/app/components/socialIcons/Instagram";
+import Github from "@/app/components/socialIcons/Github";
+import LinkedIn from "@/app/components/socialIcons/LinkedIn";
 
 export default function Home() {
     const [ showWhatGrowthEngineer, setShowWhatGrowthEngineer ] = useState(false);
-
-    const skills = [
-        'Javascript and Typescript',
-        'C#/.Net, PHP, Node',
-        'MSSQL, Postgres, MySQL',
-        'Segment, Amplitude, Iterable, GTM'
-    ]
 
     return (
         <main>
@@ -26,9 +23,10 @@ export default function Home() {
                     {showWhatGrowthEngineer && <GrowthEngineerPopup setState={setShowWhatGrowthEngineer} />}
                 </AnimatePresence>
                 <div className="flex gap-1">
-                    <div>resume</div>
-                    <div>LinkedIn</div>
-                    <div>Github</div>
+                    <FacebookIcon className="h-6 w-6" />
+                    <Instagram className="h-6 w-6" />
+                    <Github className="h-6 w-6" />
+                    <LinkedIn className="h-6 w-6" />
                 </div>
             </div>
         </main>
