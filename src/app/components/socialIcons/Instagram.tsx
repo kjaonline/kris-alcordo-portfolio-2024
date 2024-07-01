@@ -1,6 +1,6 @@
 import {IconType} from "@/app/components/socialIcons/IconType";
 
-const InstagramIcon : React.FC<IconType> = ({className}) => {
+const InstagramIcon : React.FC<IconType> = ({className, pathStyle}) => {
     return (
         <svg className={className} fill="currentColor" viewBox="0 0 24 24">
             <path fill-rule="evenodd"

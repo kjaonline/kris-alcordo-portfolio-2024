@@ -22,11 +22,18 @@ export default function Home() {
                 <AnimatePresence>
                     {showWhatGrowthEngineer && <GrowthEngineerPopup setState={setShowWhatGrowthEngineer} />}
                 </AnimatePresence>
-                <div className="flex gap-1">
-                    <FacebookIcon className="h-6 w-6" />
-                    <Instagram className="h-6 w-6" />
-                    <Github className="h-6 w-6" />
-                    <LinkedIn className="h-6 w-6" />
+                <div className="flex gap-2">
+                    <a href="https://www.instagram.com/krisalcordo">
+                        <Instagram className="h-6 w-6"/>
+                    </a>
+
+                    <a href="https://github.com/kjaonline">
+                        <Github className="h-6 w-6"/>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/krisalcordo/">
+                        <LinkedIn className="h-6 w-6"/>
+                    </a>
                 </div>
             </div>
         </main>
