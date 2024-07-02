@@ -1,8 +1,12 @@
+import {AnimationContext} from "@/app/components/onboarding/OnboardingContext";
+import {useContext} from "react";
+
 type GrowthEngineerProps  = {
     setState: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const GrowthEngineer :React.FC<GrowthEngineerProps> = ({setState}) => {
+    const { animationStage, increaseStep } = useContext(AnimationContext);
     return (
         <span 
         	className="relative "
