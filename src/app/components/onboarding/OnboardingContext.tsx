@@ -1,16 +1,22 @@
-import React, {createContext} from "react";
+import React, {createContext, useRef} from "react";
 
+type Position = { x: number; y: number };
 type contextValuesType = {
    animationStage: number,
-   increaseStep: () =>void
+   increaseStep: () => void,
+   positionRef: Position[]
 }
-const AnimationContext = createContext<contextValuesType>({animationStage:0, increaseStep:() =>{}});
+const AnimationContext = createContext<contextValuesType>({positionRef:[],animationStage:0, increaseStep:() =>{}});
 
 const OnboardingContextProvider : React.FC<{children: React.ReactNode[] | React.ReactNode}> = ({children}) => {
     const [animationStage, setAnimationStage] = React.useState(0);
-    const increaseStep = () => setAnimationStage((animationStage)=> animationStage + 1)
+    const increaseStep = () => {
+        setAnimationStage((prev) => prev + 1);
+        console.log('test')
+    }
+    const positionRef= useRef<Position[]>([]);
     return <AnimationContext.Provider
-        value={{animationStage, increaseStep}}
+        value={{positionRef: positionRef.current, animationStage, increaseStep}}
     >
         {children}
     </AnimationContext.Provider>

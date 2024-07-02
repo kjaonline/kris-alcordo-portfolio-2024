@@ -1,4 +1,6 @@
 import { usePathname } from "next/navigation"
+import {useContext, useEffect, useRef} from "react";
+import {AnimationContext} from "@/app/components/onboarding/OnboardingContext";
 
 const navItems = [
 	{
@@ -21,9 +23,21 @@ const navItems = [
 
 const Navigation :React.FC = () => {
 	const path = usePathname()
+	const onBoardIndex = 2;
+	const ref = useRef<HTMLUListElement>(null);
+	const context = useContext(AnimationContext);
+	const { positionRef, animationStage } = context;
+
+	useEffect(() => {
+		if(ref.current) {
+			const rect = ref.current.getBoundingClientRect();
+			positionRef[onBoardIndex] = {x: rect.left, y: rect.top};
+		}
+	}, [positionRef, animationStage]);
+
 	return (
 		<div>
-			<ul className="flex gap-3 items-center p-2">
+			<ul ref={ref} className="flex gap-3 items-center p-2">
 				{navItems.map((item, index) => 
 					<li key={index} >
 						<a href={item.link}
